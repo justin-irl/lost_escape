@@ -49,7 +49,13 @@ $you = Player.new()
 $ally = Ally.new()
 $enemy = Monster.new()
 
+def monster_hit_success
+    ($you.hp - $enemy.attack).to_s
+end
 
+def player_hit_success
+    ($enemy.hp - $you.attack).to_s
+end
 
 puts "1. it u and you have #{$you.hp.to_s} health"
 puts "1. you also have #{$you.attack.to_s} attack", ""
