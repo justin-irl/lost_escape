@@ -1,16 +1,21 @@
+### JUST FOR TESTING
+### NOT FINISHED AT ALL
+### RUNS IN A LOOP UNLESS EXITED
+
 module Rooms
 
     def room1
 
         $player.location = 0
     
-        puts "#{self.name}, you are standing in a room, there is a door in front of you.",
+        puts "#{self.name}, you are standing in room #{$player.location}, there is a door in front of you.",
             "What would you like to do?",
             "[l]ook around the room...",
-            "[g]o through the door..."
+            "[g]o through the door...",
+            "[e]xit the game..."
     
             print "> "
-            input = $stdin.gets.chomp
+            input = $stdin.gets.chomp.downcase
     
             if input == "l"
                 puts "#{self.name}, there is nothing much to see here",
@@ -20,6 +25,9 @@ module Rooms
             elsif
                 input == "g"
                 room2
+            elsif
+                input == "e"
+                $player.end_game
             else
                 puts "#{self.name},, I don't know what that means..."
                 room1
@@ -31,13 +39,14 @@ module Rooms
     
         $player.location = 1
     
-        puts "#{self.name}, you are now in the second room, there is a door behind you that you came in.",
+        puts "#{self.name}, you are now in room #{$player.location}, there is a door behind you that you came in.",
             "what would you like to do?",
             "[l]ook around the room...",
-            "[g]o back the way you came..."
+            "[g]o back the way you came...",
+            "[e]xit the game..."
     
             print "> "
-            input = $stdin.gets.chomp
+            input = $stdin.gets.chomp.downcase
     
             if input == "l"
                 puts "#{self.name}, there is nothing much to see here",
@@ -48,6 +57,9 @@ module Rooms
                 input == "g"
                 puts "#{self.name}, you go back to the first room."
                 room1
+            elsif
+                input == "e"
+                $player.end_game
             else
                 puts "#{self.name}, I don't know what that means..."
                 room2
