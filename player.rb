@@ -1,11 +1,9 @@
 require_relative 'greeting'
-require_relative 'rooms'
 require_relative "endgame"
 require_relative 'input'
 
 class Player
     include Greeting
-    include Rooms
     include EndGame
     include Input
 
@@ -21,7 +19,7 @@ class Player
         @inventory = Array[]
         puts "what is your name?"
         print "> "
-        name = $stdin.gets.chomp.downcase
+        name = $stdin.gets.chomp.capitalize
         @name = name
     end
 

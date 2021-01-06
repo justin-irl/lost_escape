@@ -1,21 +1,22 @@
 # Require Classes
 require_relative 'player'
+require_relative 'world'
 
 # Require Modules
 require_relative 'greeting'
-require_relative 'rooms'
+require_relative 'room'
 require_relative 'endgame'
 require_relative 'input'
-require_relative 'test4'
 
 # Include Modules
 include Greeting
-include Rooms
+include Room
 include EndGame
 include Input
-include Test4
 
 # Start Game
 $player = Player.new
 $player.hello
-# $player.room1
+$game = World.new
+puts $help_menu
+$game.room
