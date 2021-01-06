@@ -7,12 +7,14 @@ require_relative 'greeting'
 require_relative 'room'
 require_relative 'endgame'
 require_relative 'input'
+require_relative 'stats'
 
 # Include Modules
 include Greeting
 include Room
 include EndGame
 include Input
+include Stats
 
 # Start Game
 $player = Player.new
