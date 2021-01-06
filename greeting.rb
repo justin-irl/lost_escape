@@ -1,7 +1,8 @@
 module Greeting
     def hello
-        puts "Welcome to Lost Escape #{self.name}.\n", 
-        "you have #{self.hp} total health."
+        puts "\nWelcome to \"Lost Escape\" #{self.name}.\n", 
+        "You start with #{self.hp} total health,",
+        "and an attack power of #{self.attack}."
     end
 
     def chains

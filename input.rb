@@ -1,14 +1,25 @@
-### still in testing
-### not working properly yet
+module Input   
+ 
+    def input
+    
+        print "> "
+        input = $stdin.gets.chomp.downcase
+    
+        case input
+        when "h"
+            puts $help_menu
+        when "exit"
+            puts "you leave the game"
+        else
+            return input
+        end
+    end
 
-require_relative 'endgame'
+$help_menu = <<HELPMENU
 
-include EndGame
+---------------------------------------
 
-module Input
-
-help_menu = <<HELPMENU
-Welcome to the help Menu #{self.name}!
+Welcome to the help Menu.
 Here are the commands for the game.
 The key enclosed in brackets [] is the action:
 
@@ -28,20 +39,8 @@ Interaction:
 System:
 \t type 'exit' to quit the game
 
+---------------------------------------
+
 HELPMENU
 
-
-    def input
-
-        print "> "
-        input = $stdin.gets.chomp.downcase
-
-        if input == "h"
-            puts help_menu
-        elsif input == "exit"
-            $player.end_game
-        else
-            puts "thanks"
-        end
-    end
 end
