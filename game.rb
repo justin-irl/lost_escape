@@ -4,21 +4,31 @@ require_relative 'world'
 
 # Require Modules
 require_relative 'greeting'
-require_relative 'room'
 require_relative 'endgame'
 require_relative 'input'
 require_relative 'stats'
+require_relative 'roomlist'
+require_relative 'movement'
 
 # Include Modules
 include Greeting
-include Room
 include EndGame
 include Input
 include Stats
+include RoomList
+include Movement
 
 # Start Game
 $player = Player.new
-$player.hello
+puts "player starts at #{$player.location}"
 $game = World.new
+$player.hello.ready
 puts $help_menu
-$game.room
+# puts "is the lamp light? #{$lamp_light}"
+$game.room0
+puts "player location is now #{$player.location}"
+
+# ---- global update testers ----
+
+# puts "encounter state is: #{$encounter}"
+# puts "is the lamp light? #{$lamp_light}"

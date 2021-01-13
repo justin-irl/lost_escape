@@ -2,12 +2,16 @@ require_relative 'greeting'
 require_relative "endgame"
 require_relative 'input'
 require_relative 'stats'
+require_relative 'movement'
+require_relative 'roomlist'
 
 class Player
     include Greeting
     include EndGame
     include Input
     include Stats
+    include Movement
+    include RoomList
     
     attr_accessor :hp, :attack, :name, :location, :inventory, :encounters
 

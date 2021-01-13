@@ -1,23 +1,30 @@
 require_relative 'input'
-require_relative 'room'
+require_relative 'roomlist'
+require_relative 'movement'
 
 class World
-    include Input
-    include Room
 
+include Input
+include RoomList
+include Movement
 
-$welcome = <<WELCOME
+    attr_accessor :wlocation
 
-#############################
-#         WELCOME           #
-#           TO              #
-#        LOST ESCAPE        #
-#############################
+$welcome = <<~WELCOME
+
+    \t#############################
+    \t#         WELCOME           #
+    \t#           TO              #
+    \t#        LOST ESCAPE        #
+    \t#############################
 
 WELCOME
     
     
     def initialize
         puts $welcome
+        $lamp_light = false
+        $encounter = false
     end
+
 end

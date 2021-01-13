@@ -2,7 +2,7 @@ module Stats
 
     
     def stats
-        puts "You currently have #{self.hp} hp left,",
+        puts "\nYou currently have #{self.hp} hp left,",
         "Your attack power is #{self.attack},",
         "You are currently at #{self.location} location,",
         "You have had #{self.location} encounters."
