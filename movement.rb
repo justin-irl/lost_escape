@@ -29,7 +29,7 @@ module Movement
             return $player.location
         when "n"
             $player.location = 3
-            room_set
+            room3
             return $player.location
         else
             puts "i dont know that one..."
